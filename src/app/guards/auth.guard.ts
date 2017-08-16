@@ -16,12 +16,12 @@ export class AuthGuard implements CanActivate {
   canActivate() {
     console.log("PassCanActive");
     if (!localStorage.getItem("token")) {
-      console.log(localStorage.getItem("token"));
-      return true;
+      this.router.navigate(['/']);
+      return false;
     }
-    this.router.navigate(['/yourdashboard']);
+   
     console.log("HaveToken");
-    return false;
+    return true;
   }
 }
   // canActivate() {

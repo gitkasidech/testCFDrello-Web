@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { Router, RouterModule, } from '@angular/router';
+import { Http, Response, Headers } from '@angular/http';
 
 
 @Component({
@@ -10,8 +10,13 @@ import { Routes, RouterModule } from '@angular/router';
 })
 export class YourdashboardComponent implements OnInit {
 
+
+  constructor(public http: Http, private router: Router) {}
   ngOnInit() {
     
+  }
+  LinkCreate(){
+    this.router.navigate(['/create']);
   }
 
 }

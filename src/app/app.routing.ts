@@ -6,22 +6,23 @@ import {LoginComponent} from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import {HeadComponent} from './head/head.component';
 import {DashboardnameComponent} from './dashboardname/dashboardname.component';
+import {CreateComponent} from './create/create.component';
 
 
 const appRoutes: Routes=[
      {
     path: '',
-    component: LoginComponent,
-    canActivate: [AuthGuard]
+    component: LoginComponent
+     
   },
   {
     path: 'yourdashboard',
     component: DashboardnameComponent
-    
+    ,canActivate: [AuthGuard]
   },
   {
-    path: 'head',
-    component: HeadComponent
+    path: 'create',
+    component: CreateComponent
     
   },
   {

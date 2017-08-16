@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
     return new Promise(function (resolve) {
       Trello.authorize({
-        type: 'redirect',
+        type: 'popup',
         name: 'CFDrello Dashboard',
         scope: {
           read: 'true',
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       console.log("Trello2" + token);
       return new Promise((resolver, reject) => {
         Trello.get('members/me',
-          { fields: 'id,username,fullName,token' },
+          { fields: 'id,username,fullName,token,idBoards' },
           (user, err) => {
             console.log('1', user, err);
             if (!err) {
@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("token",'token')
       console.log(localStorage.getItem("token"))
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://localhost:7777/authenuser',
+      this.http.post('http://localhost:7777/members',
         JSON.stringify(user), { headers: headers })
         .map(response => response.json())
         .subscribe(response => {

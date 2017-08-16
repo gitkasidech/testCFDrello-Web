@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { HeadComponent } from './head/head.component';
 import { DashboardnameComponent } from './dashboardname/dashboardname.component';
 import { YourdashboardComponent } from './yourdashboard/yourdashboard.component';
+import { CreateComponent } from './create/create.component';
 
 
 
@@ -20,7 +21,8 @@ import { YourdashboardComponent } from './yourdashboard/yourdashboard.component'
     LoginComponent,
     HeadComponent,
     DashboardnameComponent,
-    YourdashboardComponent
+    YourdashboardComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

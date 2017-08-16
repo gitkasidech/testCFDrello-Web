@@ -2,10 +2,11 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
@@ -18,11 +19,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-                <a class="navbar-brand" href="#"><img width="90" class="img-responsive" src="assets/images/font.png"></a>
+                <a class="navbar-brand" href="#"><img width="65" class="img-responsive" src="assets/images/font.png"></a>
             </div>
             <div id="navbar" class="nav navbar-nav navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a [routerLink]="['/']"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> logout</a></li>
+                    <li><a href="#" (click)="logout()"> logout</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
