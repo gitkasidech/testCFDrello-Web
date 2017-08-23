@@ -6,19 +6,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://trello.com/1/client.js?key=575d84734099f396a4f25e78af69730b"></script>
+    <script src="https://api.trello.com/1/organizations/myorganization/boards?key=0c0448fe0859bc978758a937fea22dc5"></script>
 </head>
 
 <body>
-
+    
     <div class="container">
-        <ul class="nav nav-tabs">
-            <li>
-                <h4>Your Dashboard</h4>
-            </li>
-            <li class="nav navbar-nav navbar-right"><button type="button" class="btn btn-success" (click)="LinkCreate()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Create</button></li>
-        </ul>
-    </div>
+            <ul class="nav nav-tabs">
+                <li>
+                    <h4>Your Dashboard</h4>
 
+                </li>
+                <li class="nav navbar-nav navbar-right"><button type="button" class="btn btn-success" (click)="LinkCreate()" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Create</button></li>
+            </ul>
+    </div>
+    <br><br>
+    <div class="container">
+                <table class="w3-table w3-bordered w3-striped">
+                        <tr>
+                        <th>Edit</th>
+                        <th>Dashboard Name</th>
+                        <th>Boards</th>
+                        </tr>
+                        <tr ng-repeat="user in users">
+                        <td>
+                            <button class="w3-btn w3-green w3-ripple" ng-click="editUser(user.id)">&#9998; Edit</button>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                </table>
+    </div>
+    <gettoken ></gettoken>
 </body>
 
 </html>

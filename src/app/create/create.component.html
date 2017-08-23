@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
@@ -15,133 +16,58 @@
 </head>
 
 <body>
-  <p>
-    <app-head></app-head>
-</p>
-  <br>
-  <br>
-<div  class="container">
-  <div class="col-xs-12" style="border-bottom:1px solid #666;">
-    <div class="row">
-      <div class="col-xs-8">
-        <h2>
-          <a style="color:#666;">
-            untitled dashboard
-          </a>
-        </h2>
-      </div>
-    </div>
+    <p>
+        <app-head></app-head>
+    </p>
+  
+  <br><br><br>
+  <div class="container">
+      <form > 
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" value="untitle dashboard"  required >
+          </div> 
+          <br>
+          <div class="form-group">
+              <label for="board">Boards</label>
+              <select class="form-control" id="board" required>
+                <option *ngFor="let board of boards" [value]="board" >{{board}}</option>
+              </select>
+            </div>
+          <br>
+          <div class="form-group">
+              <label for="list">Complete Cards</label>
+              <input type="text" class="form-control" id="name" value=""   >
+              <br>
+              <p><button class="w3-button w3-blue" type="checkbox" (click)="completeCards($event)">Select Cards</button>
+              <input type="color" name="favcolor" value="#80ff00">
+          </div>
+          <div class="form-group">
+              <label for="list">Inprogress Cards</label>
+              <input type="text" class="form-control" id="name" value=""  >
+              <br>
+              <p><button class="w3-button w3-blue" (click)="inprogressCards()" >Select Cards</button>
+              <input type="color" name="favcolor" value="#ff0000">
+          </div>
+          <div class="form-group">
+              <label for="list">Backlog Cards</label>
+              <input type="text" class="form-control" id="name" value=""   >
+              <br>
+              <p><button class="w3-button w3-blue" (click)="backlogCards()">Select Cards</button>
+                <!--  -->
+              <input type="color" name="favcolor" value="#ffff00">
+          </div><br>
+          <div  class="nav navbar-nav navbar-right">
+              <button type="submit" class="w3-button w3-green">Done</button>
+          </div>
+   
+    </form>
   </div>
-</div>
-<!-- ====================== Name ================================ -->
-<div class="container">
-  <form>
-    <div class="container">
-      <h3 style="color:#666;">Name</h3>
-      <input type="text" class="form-control" id="usr" value="untitled dashboard">
-    </div>
-  </form>
-</div>
-<!-- ================================ Boards =============================== -->
-<div  class="container">
-  <div class="col-xs-12" style="border-bottom:1px solid #666;">
-    <h3>
-          <a style="color:#666;">
-            Boards
-          </a>
-        </h3>
-  </div>
-</div>
-<div class="container">
-  <form>
-    <div class="container">
-      <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
-        <option>Internship</option>
-        <option>Mebooks</option>
-        <option>ยินดีต้อนรับสู่บอร์ดนี้</option>
-      </select>
-      <br>
-    </div>
-  </form>
-</div>
-<!-- ================================ Complete Cards =============================== -->
-<div  class="container">
-  <div class="col-xs-12" style="border-bottom:1px solid #666;">
-    <h3>
-          <a style="color:#666;">
-            Complete Cards
-          </a>
-        </h3>
-  </div>
-</div>
-<div class="container">
-  <form>
-    <div class="container">
-      <p style="color:#666;">Cards moved to these lists will be reported as completed</p>
-      <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
-        <option>To Do</option>
-        <option>Doing</option>
-        <option>Done</option>
-      </select>
-      <br>
-    </div>
-  </form>
-</div>
-<!-- ================================ In progress cards =============================== -->
-<div  class="container">
-  <div class="col-xs-12" style="border-bottom:1px solid #666;">
-    <h3>
-          <a style="color:#666;">
-            In progress cards
-          </a>
-        </h3>
-  </div>
-</div>
-<div class="container">
-  <form>
-    <div class="container">
-      <p style="color:#666;">Cards in these lists will be reported as in progress</p>
-      <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
-        <option>To Do</option>
-        <option>Doing</option>
-        <option>Done</option>
-      </select>
-      <br>
-    </div>
-  </form>
-</div>
-<!-- ================================ Backlog Cards =============================== -->
-<div  class="container">
-  <div class="col-xs-12" style="border-bottom:1px solid #666;">
-    <h3>
-          <a style="color:#666;">
-            Backlog Cards
-          </a>
-        </h3>
-  </div>
-</div>
-<div class="container">
-  <form>
-    <div class="container">
-      <p style="color:#666;">Cards in these lists will be reported as backlog tasks</p>
-      <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
-        <option>To Do</option>
-        <option>Doing</option>
-        <option>Done</option>
-      </select>
-      <br>
-    </div>
-  </form>
-</div>
 <br><br>
-<div class="container">
-  <button class="w3-button w3-green">Save</button>
-</div>
 
+
+  
+   
 </body>
 
 </html>
